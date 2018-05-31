@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import SpaceListItem from './SpaceListItem';
+
+const ResultList = styled.div`
+  width: 100%;
+  background: #eaecef;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
 
 class SpaceList extends Component {
   constructor(props) {
@@ -143,7 +153,7 @@ class SpaceList extends Component {
   };
   render() {
     const { resultList } = this.state;
-    return resultList.map(each => SpaceListItem(each));
+    return <ResultList>{resultList.map(each => SpaceListItem(each))}</ResultList>;
   }
 }
 
