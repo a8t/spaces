@@ -8,6 +8,7 @@ const Card = styled.div`
   position: relative;
   background: white;
   max-width: 400px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 `;
 
 const BackgroundImg = styled.img`
