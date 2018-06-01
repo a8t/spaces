@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const PageSelectorButton = styled.button`
   font-size: 2em;
@@ -16,9 +17,11 @@ const PageSelector = props => {
   const buttons = [...Array(MAX_PAGES)].map((each, index) => {
     const page = index + 1;
     return (
-      <PageSelectorButton onClick={props.onSelectPage} data-page={page} key={page}>
-        {page}
-      </PageSelectorButton>
+      <Link to={`/spaces/${page}`} key={page}>
+        <PageSelectorButton onClick={props.onSelectPage} data-page={page}>
+          {page}
+        </PageSelectorButton>
+      </Link>
     );
   });
   return <div>{buttons}</div>;
