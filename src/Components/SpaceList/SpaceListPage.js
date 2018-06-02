@@ -27,17 +27,13 @@ class SpaceListPage extends Component {
     const responseObj = await response.json();
     this.setState({
       spaceList: responseObj.data,
+      currentPage: pageNum,
     });
   };
 
   onSelectPage = async e => {
-    const page = Number(e.target.dataset.page);
-    const response = await fetch(`https://thisopenspace.com/lhl-test?page=${page}`);
-    const responseObj = await response.json();
-    this.setState({
-      spaceList: responseObj.data,
-      currentPage: page,
-    });
+    const pageNum = Number(e.target.dataset.page);
+    this.getPageData(pageNum);
   };
 
   render() {
